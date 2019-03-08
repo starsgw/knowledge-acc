@@ -26,8 +26,18 @@ print("5:",os.getcwd())
 
 os.listdir(path)
 #返回指定路径下的文件和文件夹列表。
-print("6:",os.listdir())#不给path参数则返回当前文件所在目录的所有文件名
+print("6:",os.listdir(path))#不给path参数则返回当前文件所在目录的所有文件名
 
+os.walk(path)
+#该函数可以得到一个三元tupple(dirpath, dirnames, filenames).
+# 参数含义：
+# dirpath：string，代表目录的路径；
+# dirnames：list，包含了当前dirpath路径下所有的子目录名字（不包含目录路径）；
+# filenames：list，包含了当前dirpath路径下所有的非目录子文件的名字（不包含目录路径）。
+for root, dirs, files in os.walk(path):
+        print(root) #当前目录路径
+        print(dirs) #当前路径下所有子目录
+        print(files) #当前路径下所有非目录子文件
 
 #os.path模块常用方法补充:
 
